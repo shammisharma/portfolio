@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+ <title>Shammi Sharma | Graphics Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body style="padding:0 15px 30px 15px">
+ 
+
+
+<section class="divide-sec">
+
+<div class="first-block"> 
+<div class="masonry-container"></div>
+</div> 
+
+</section>
+ 
+<a href="index.html"><div class="backto"> <img src="10.png" style="display: inline-block"> Back to profile</div></a>
+
+ <script type="text/javascript">
+ 
+let wrapper = document.querySelector('.masonry-container');
+ 
+ var xhr = new XMLHttpRequest();
+xhr.open("GET", "/portfolio/graphics", true);
+xhr.responseType = 'document';
+xhr.onload = () => {
+  if (xhr.status === 200) {
+    var elements = xhr.response.getElementsByTagName("a");
+    for (x of elements) {
+      if ( x.href.match(/\.(jpe?g|png|gif)$/) ) { 
+          let img = document.createElement("img");
+		   let innerdiv = document.createElement('div');
+ innerdiv.classList.add('masonry-item');
+ wrapper.appendChild(innerdiv);
+          img.src = x.href;
+          innerdiv.appendChild(img);
+      } 
+    };
+  } 
+  else {
+    alert('Request failed. Returned status of ' + xhr.status);
+  }
+}
+xhr.send()
+</script>
+ 
+</body>
+</html>

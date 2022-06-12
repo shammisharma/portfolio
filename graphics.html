@@ -19,40 +19,52 @@
 <section class="divide-sec">
 
 <div class="first-block"> 
-<div class="masonry-container"></div>
+<div class="masonry-container">
+<div class="masonry-item"><img src="media/1.jpg"></div>
+<div class="masonry-item"><img src="media/2.jpg"></div>
+<div class="masonry-item"><img src="media/2b.jpg"></div>
+<div class="masonry-item"><img src="media/3.jpg"></div>
+<div class="masonry-item"><img src="media/3a.jpg"></div>
+<div class="masonry-item"><img src="media/4.jpg"></div>
+<div class="masonry-item"><img src="media/4a.jpg"></div>
+<div class="masonry-item"><img src="media/5.jpg"></div>
+<div class="masonry-item"><img src="media/5a.jpg"></div>
+<div class="masonry-item"><img src="media/6.jpg"></div>
+<div class="masonry-item"><img src="media/6b.jpg"></div>
+<div class="masonry-item"><img src="media/7.jpg"></div>
+<div class="masonry-item"><img src="media/7a.jpg"></div>
+<div class="masonry-item"><img src="media/7b.jpg"></div>
+<div class="masonry-item"><img src="media/8.jpg"></div>
+<div class="masonry-item"><img src="media/9.jpg"></div>
+<div class="masonry-item"><img src="media/10.jpg"></div>
+<div class="masonry-item"><img src="media/11a.jpg"></div>
+<div class="masonry-item"><img src="media/12.jpg"></div>
+<div class="masonry-item"><img src="media/12a.jpg"></div>
+<div class="masonry-item"><img src="media/12b.jpg"></div>
+<div class="masonry-item"><img src="media/13.jpg"></div>
+<div class="masonry-item"><img src="media/15a.jpg"></div>
+<div class="masonry-item"><img src="media/17.jpg"></div>
+<div class="masonry-item"><img src="media/18.jpg"></div>
+<div class="masonry-item"><img src="media/19.jpg"></div>
+<div class="masonry-item"><img src="media/20.jpg"></div>
+<div class="masonry-item"><img src="media/21.jpg"></div>
+<div class="masonry-item"><img src="media/22.jpg"></div>
+<div class="masonry-item"><img src="media/23.jpg"></div>
+<div class="masonry-item"><img src="media/23a.jpg"></div>
+<div class="masonry-item"><img src="media/27.jpg"></div>
+<div class="masonry-item"><img src="media/28.jpg"></div>
+<div class="masonry-item"><img src="media/29.jpg"></div>
+<div class="masonry-item"><img src="media/32.jpg"></div>
+<div class="masonry-item"><img src="media/35.jpg"></div>
+<div class="masonry-item"><img src="media/38.jpg"></div>
+</div>
 </div> 
 
 </section>
  
 <a href="index.html"><div class="backto"> <img src="left.png" style="display: inline-block"> Back to profile</div></a>
 
- <script type="text/javascript">
  
-let wrapper = document.querySelector('.masonry-container');
- 
- var xhr = new XMLHttpRequest();
-xhr.open("GET", "media", true);
-xhr.responseType = 'document';
-xhr.onload = () => {
-  if (xhr.status === 200) {
-    var elements = xhr.response.getElementsByTagName("a");
-    for (x of elements) {
-      if ( x.href.match(/\.(jpe?g|png|gif)$/) ) { 
-          let img = document.createElement("img");
-		   let innerdiv = document.createElement('div');
- innerdiv.classList.add('masonry-item');
- wrapper.appendChild(innerdiv);
-          img.src = x.href;
-          innerdiv.appendChild(img);
-      } 
-    };
-  } 
-  else {
-    alert('Request failed. Returned status of ' + xhr.status);
-  }
-}
-xhr.send()
-</script>
  
 </body>
 </html>
